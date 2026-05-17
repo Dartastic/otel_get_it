@@ -22,7 +22,6 @@ class AuthService {
 Future<void> main() async {
   await OTel.initialize(
     serviceName: 'get-it-demo',
-    endpoint: 'http://localhost:4317',
   );
 
   final getIt = GetIt.instance;

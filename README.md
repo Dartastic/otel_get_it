@@ -27,7 +27,6 @@ import 'package:otel_get_it/otel_get_it.dart';
 Future<void> main() async {
   await OTel.initialize(
     serviceName: 'my-app',
-    endpoint: 'http://localhost:4317',
   );
 
   final getIt = GetIt.instance;
