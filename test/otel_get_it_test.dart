@@ -2,11 +2,10 @@
 // Copyright 2025, Mindful Software LLC, All rights reserved.
 
 import 'package:dartastic_opentelemetry/dartastic_opentelemetry.dart';
+import 'package:dartastic_opentelemetry/testing.dart';
 import 'package:get_it/get_it.dart';
 import 'package:otel_get_it/otel_get_it.dart';
 import 'package:test/test.dart';
-
-import 'package:dartastic_opentelemetry/testing.dart';
 
 class _Service {
   _Service(this.name);

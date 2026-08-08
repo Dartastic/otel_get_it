@@ -1,6 +1,17 @@
 # Changelog
 
-## [0.1.0-beta.1-wip]
+## [0.2.0-wip]
+
+### Changed
+
+- `get_it` constraint widened to `>=8.0.0 <10.0.0` — supports get_it 9.x
+  (verified against 9.2.1) while keeping 8.x compatibility.
+- Dependency floors raised to `dartastic_opentelemetry ^1.1.0-beta.12` and
+  `dartastic_opentelemetry_api ^1.0.0-rc.1`. The previous floors declared
+  compatibility with API versions that predate the semconv enums this
+  package uses and could not actually resolve-and-compile.
+- `repository` URL corrected to the canonical `Dartastic` org casing so
+  pub.dev repository verification succeeds.
 
 ### Added
 
@@ -23,8 +34,9 @@
   guide.
 - Zone-scoped suppression
   (`runWithoutGetItInstrumentation` and async variant).
-- Ten tests on the canonical `_helpers/otel_test_harness.dart`
-  (instance-scoped via `GetIt.asNewInstance()`; no global state).
+- Ten tests on the SDK's test surface
+  (`package:dartastic_opentelemetry/testing.dart`; instance-scoped via
+  `GetIt.asNewInstance()`; no global state, no network).
   Coverage: every traced method's success path, the error path on
   `registerSingletonAsync`, `instanceName` propagation, both
   suppression entry points, and multi-registration spans.
