@@ -2,7 +2,7 @@ name: otel_get_it
 description: OpenTelemetry instrumentation for `package:get_it`. Wraps
   async singleton registration and lookup with spans so DI bootstrap
   cost is visible in your traces.
-version: 0.3.0-wip
+version: 1.0.0-wip
 repository: https://github.com/dartastic/otel_get_it
 homepage: https://dartastic.io
 
@@ -10,8 +10,8 @@ environment:
   sdk: ^3.0.0
 
 dependencies:
-  dartastic_opentelemetry: ^1.1.0-beta.12
-  dartastic_opentelemetry_api: ^1.0.0-rc.1
+  dartastic_opentelemetry: ^1.1.0-beta.17
+  dartastic_opentelemetry_api: '>=1.0.0-rc.4 <1.0.0-rc.5'
   get_it: ">=8.0.0 <10.0.0"
 
 dev_dependencies:
