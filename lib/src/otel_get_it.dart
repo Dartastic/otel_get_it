@@ -3,7 +3,7 @@
 
 import 'dart:async';
 
-import 'package:dartastic_opentelemetry/dartastic_opentelemetry.dart';
+import 'package:dartastic_opentelemetry_api/dartastic_opentelemetry_api.dart';
 import 'package:get_it/get_it.dart';
 
 import 'get_it_suppression.dart';
@@ -11,7 +11,7 @@ import 'get_it_suppression.dart';
 const _tracerName = 'otel_get_it';
 const _diSystem = 'get_it';
 
-Tracer _tracer() => OTel.tracerProvider().getTracer(_tracerName);
+APITracer _tracer() => OTelAPI.tracerProvider().getTracer(_tracerName);
 
 /// Typed attribute keys for get_it spans.
 ///
@@ -48,7 +48,7 @@ Attributes _attrs({
   required String typeName,
   String? instanceName,
 }) =>
-    OTel.attributesFromMap(<String, Object>{
+    OTelAPI.attributesFromMap(<String, Object>{
       GetItSemantics.diSystem.key: _diSystem,
       GetItSemantics.diOperation.key: operation,
       GetItSemantics.diType.key: typeName,
@@ -79,8 +79,8 @@ Future<R> tracedGetItCall<R>({
   try {
     return await invoke();
   } catch (e, st) {
-    span.addAttributes(OTel.attributes([
-      OTel.attributeString(
+    span.addAttributes(OTelAPI.attributes([
+      OTelAPI.attributeString(
         ErrorAttributes.errorType.key,
         e.runtimeType.toString(),
       ),
