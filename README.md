@@ -115,7 +115,7 @@ sub-microsecond on the hot path and span overhead would dominate.
 ```yaml
 dependencies:
   get_it: ^9.0.0 # 8.x also supported
-  otel_get_it: ^0.3.0
+  otel_get_it: ^0.3.1
 ```
 
 ## Use
